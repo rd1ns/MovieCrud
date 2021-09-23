@@ -1,0 +1,27 @@
+﻿@page
+@model MovieCrud.Pages.ReadModel
+@using Models
+@{
+    ViewData["Title"] = "Movies";
+}
+<center>
+    <h1 class="bg-info text-white">Filmler</h1>
+    
+</center>
+<table class="table table-sm table-bordered">
+    <tr>
+
+        <th>Id</th>
+        <th>Name</th>
+        <th>Actors</th>
+    </tr>
+    <a asp-page="Create" class="btn btn-secondary">Bir Film Ekle</a>
+    @foreach (Movies m in Model.movieList)
+    {
+        <tr>
+            <td>@m.Id</td>
+            <td>@m.Name</td>
+            <td>@m.Actors</td>
+        </tr>
+    }
+</table>
